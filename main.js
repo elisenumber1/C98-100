@@ -1,5 +1,7 @@
 var speechrecognition = window.webkitSpeechRecognition;
 var recognition = new speechrecognition;
+Webcam.attach(camera);
+
 function start(){
 	recognition.start();
 }
@@ -13,7 +15,7 @@ recognition.onresult = function(event){
 }
 function speak(){
 	var synt=window.speechSynthesis;
-	Webcam.attach(camera);
+	
 	speak_data="taking your selfie in 5 seconds";
 	var utterthis = new SpeechSynthesisUtterance(speak_data);
 	synt.speak(utterthis);
